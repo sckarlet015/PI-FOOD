@@ -1,0 +1,22 @@
+.fondo{
+    background-image: url("../img//backFood.webp");
+    background-size: cover;
+    width: 1365px;
+    height: 615px;
+    justify-content: center;
+    display: grid;
+}
+.btn{
+    border-radius: 10px;
+    width: 150px;
+    height: 100px;
+    margin-top: 50px;
+    background-color: rgba(255, 255, 255, 0.13);
+    font-size: xx-large;
+    font-style: oblique;
+}
+.btn:hover{
+    background-color: black;
+    color: white;
+    border-color: white;
+}

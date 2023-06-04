@@ -1,0 +1,32 @@
+.NavBar{
+    background-color: #ff4800;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: full;
+    height: 60px;
+    border-radius: 10px;
+}
+.link{
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.096);
+    border: 3px solid rgb(68, 65, 65) ;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-top: -3px;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+}
+.link:hover{
+    background-color: white;
+    color: orangered;
+    border: 3px solid rgb(68, 65, 65) ;
+    border-radius: 5px;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}

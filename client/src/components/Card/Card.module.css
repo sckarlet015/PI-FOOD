@@ -1,0 +1,64 @@
+.card {
+    width: 350px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    display: inline-table;
+    background-color: #ecdbcd;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    text-align: -webkit-center;
+    border: 3px solid rgb(255, 72, 0);
+  }
+  
+  .card img {
+    width: 250px;
+    height: 210px;
+    margin-top: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+    align-content: center;
+  }
+  
+  .info {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: purple;
+  }
+  .name:hover{
+    color: rgb(128, 0, 53);
+  }
+  
+  .type {
+    margin: 5px;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  p{
+    padding: 2px;
+    margin: 2px;
+    color: black;
+  }
+  .diet{
+    padding: 5px;
+    margin: 3px;
+    font-size: 10px;
+    border-radius: 5px;
+    background-color: coral;
+    color: white;
+  }
+  
