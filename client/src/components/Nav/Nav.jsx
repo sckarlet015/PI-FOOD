@@ -10,7 +10,6 @@ export default function Nav(props) {
         <div className={style.NavBar}>
             <NavLink to={"/home"} className={style.link}>Inicio</NavLink>
             <NavLink to={"/Crear"} className={style.link}>Crear</NavLink>
-            <NavLink to={"/Acerca"} className={style.link}>Acerca</NavLink>
             <SearchBar buscar={props.buscar}></SearchBar>
         </div>
     )
