@@ -44,7 +44,7 @@ const { Recipe, Diet } = require('../db');
     healthScore: newRecipe.healthScore,
     steps: newRecipe.steps,
     apiID: newRecipe.id,
-    id: newRecipe.apiID,
+    id: newRecipe.id,
     source: newRecipe.source,
     diets
     }

@@ -12,7 +12,7 @@ const api_key = process.env.API_KEY
 //Se define la función
 const getRecetasApi = async (req, res) => {
     //Cantidad de recetas solicitadas a la api
-    const num = 5;
+    const num = 100;
     try {
         //Se consulta la api
         const {

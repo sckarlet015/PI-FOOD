@@ -60,50 +60,33 @@ const getRecipeId = async (req, res) => {
             })
         }
     } else {
-        // No es un número entero, validar si es un UUID
-        const uuidPattern = /^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[4][0-9a-fA-F]{3}-[89AB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$/;
-        if (uuidPattern.test(idRecipe)) {
-            // Es un UUID válido
-            try {
-                // Buscar la receta en la base de datos local por id
-                const localRecipe = await Recipe.findOne({
-                    //Aquí se establece la condición de búsqueda de la consulta
-                    where: {
-                        id: idRecipe,
-                    },
-                    include: {
-                        model: Diet,
-                        attributes: ['name'],
-                        through: {
-                            attributes: [],
-                        },
-                    },
-                });
-                //Crear un objeto con la informacion nesesaria para la respuesta del cliente
-                let newRecipe = {
-                name: localRecipe.name,
-                image: localRecipe.image,
-                summary: localRecipe.summary,
-                healthScore: localRecipe.healthScore,
-                steps: localRecipe.steps || 'No se proporcionaron instrucciones para esta receta',
-                apiID: localRecipe.id,
-                source: localRecipe.source,
-                diets: localRecipe.diets.map(dieta => dieta.name),
-                }
-                //Respuesta al cliente
-                res.status(200).json(newRecipe)
-            } catch (error) {
-                //Si hay un error se envia al cliente
-                return res.status(400).json({
-                    message: error.message
-                })
-            }
-        } else {
-            // No es un número entero ni un UUID válido
-            return res.status(400).json({
-                message: 'El parámetro idRecipe no es válido'
-            });
+        // Buscar la receta en la base de datos local por id
+        const localRecipe = await Recipe.findOne({
+            //Aquí se establece la condición de búsqueda de la consulta
+            where: {
+                id: idRecipe,
+            },
+            include: {
+                model: Diet,
+                attributes: ['name'],
+                through: {
+                    attributes: [],
+                },
+            },
+        });
+        //Crear un objeto con la informacion nesesaria para la respuesta del cliente
+        let newRecipe = {
+        name: localRecipe.name,
+        image: localRecipe.image,
+        summary: localRecipe.summary,
+        healthScore: localRecipe.healthScore,
+        steps: localRecipe.steps || 'No se proporcionaron instrucciones para esta receta',
+        apiID: localRecipe.id,
+        source: localRecipe.source,
+        diets: localRecipe.diets.map(dieta => dieta.name),
         }
+        //Respuesta al cliente
+        res.status(200).json(newRecipe)
     }
 };
 module.exports = getRecipeId;

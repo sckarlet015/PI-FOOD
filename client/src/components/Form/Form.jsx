@@ -68,31 +68,31 @@ export default function Form(props) {
             <h3>Crea tu Receta</h3>
             <div>
                 <div className={style.conten}>
-                    <span className={style.title}>Imagen: </span>
-                    <input className={style.inp} name="image" value={createRece.image} onChange={handleInputChange} placeholder="URL de la imagen del pokemon."></input>
+                    <span className={style.title}>Imagen </span>
+                    <input className={style.inp} name="image" value={createRece.image} onChange={handleInputChange} placeholder="URL de la imagen de la receta."></input>
                     <p className={style.danger}>{errors.image}</p>
-                    <img src={createRece.image} alt="imagen del pokemon" className={style.imagen} />
+                    <img src={createRece.image} alt="imagen de la receta" className={style.imagen} />
                 </div>
                 <div className={style.conten}>
-                    <span className={style.title}>Nombre: </span>
+                    <span className={style.title}>Nombre </span>
                     <input className={style.inp} name="name" value={createRece.name} onChange={handleInputChange} placeholder="Solo letras sin números."></input>
                     <p className={style.danger}>{errors.name}</p>
-                    <span className={style.title}>Resumen: </span>
+                    <span className={style.title}>Resumen </span>
                     <textarea className={style.inp} name="summary" value={createRece.summary} onChange={handleInputChange} placeholder="Resumen del platillo..." rows={9} cols={50}></textarea>
                     <p className={style.danger}>{errors.summary}</p>
                 </div>
             </div>
             <div className={style.conten2}>
-                <span className={style.title}>Preparación: </span>
+                <span className={style.title}>Paso a paso </span>
                 <textarea className={style.inp} name="steps" value={createRece.steps} onChange={handleInputChange} placeholder="Preparación del platillo..." rows={6} cols={80}></textarea>
                 <p className={style.danger}>{errors.steps}</p>
             </div>
             <div className={style.conten2}>
-                <span className={style.title}>Puntuación: </span>
+                <span className={style.title}>Nivel saludable </span>
                 <input className={style.inp} name="healthScore" value={createRece.healthScore} onChange={handleInputChange} placeholder="Solo numeros de 1 a 99."></input>
                 <p className={style.danger}>{errors.healthScore}</p>
                 <div className={style.types}>
-                    <span className={style.title}>Dietas: </span>
+                    <span className={style.title}>Dietas </span>
                     <div className={style.dietas}>
                         {props.allDiets.map((opcion) => (
                             <div key={opcion.id}> {/* Utiliza el identificador único como clave */}

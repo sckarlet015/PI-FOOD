@@ -11,13 +11,13 @@ const api_key = process.env.API_KEY
 //Se define la funcion
 const getDietasApi = async () => {
     //Cantidad de recetas solicitadas a la api
-    const num = 5;
+    const num = 100;
     try {
         //Peticion a la api
         const {
             data
         } = await axios.get(
-            `https://api.spoonacular.com/recipes/complexSearch?number=5&apiKey=${api_key}&addRecipeInformation=true`
+            `https://api.spoonacular.com/recipes/complexSearch?number=${num}&apiKey=${api_key}&addRecipeInformation=true`
         );
         //Destructuring de la respuesta de la api
         const {

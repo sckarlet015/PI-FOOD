@@ -39,7 +39,7 @@ export default function Detail() {
           <div>
             <h2 className={style.name}>Resumen</h2>
             <p dangerouslySetInnerHTML={{ __html: receta[0]?.summary }}></p>
-            <span>Nivel de salud: {receta[0]?.healthScore}</span>
+            <span className={style.score}>Nivel de salud: {receta[0]?.healthScore}</span>
             <div>
               <h2 className={style.name}>Preparación</h2>
               <p dangerouslySetInnerHTML={{ __html: receta[0]?.steps }}></p>
