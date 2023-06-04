@@ -1,4 +1,4 @@
-.fondo{
+.fondo {
     background-image: url("../img//backFood.webp");
     background-size: cover;
     width: 1365px;
@@ -6,7 +6,8 @@
     justify-content: center;
     display: grid;
 }
-.btn{
+
+.btn {
     border-radius: 10px;
     width: 150px;
     height: 100px;
@@ -15,7 +16,8 @@
     font-size: xx-large;
     font-style: oblique;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: black;
     color: white;
     border-color: white;

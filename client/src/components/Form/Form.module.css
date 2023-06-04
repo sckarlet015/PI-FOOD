@@ -1,69 +1,82 @@
 .danger {
-    font-size: 15px;
-    color: red;
-    margin-left: 10em;
-    display: contents;
-  }
-  .form{
-    display: inline-grid;
-    border: 5px solid #ff4800;
-    border-radius: 10px;
-    padding: 10px;
-    width: 700px;
-    height: 600px;
-    justify-items: center;
-    background-image: url("../img/crearBackFood2.webp");
-    margin: 10px;
-  }
-  .conten{
-    display: inline-grid;
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-  .conten2{
-    display: grid;
-  }
-  .types{
-    text-align: justify;
-  }
-  .title{
-    color: white;
-    font-size: 1rem;
-    /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
-    background-color: rgba(255, 255, 255, 0);
-  }
-  .dietas{
-    display: -webkit-inline-box;
-    margin: 5px;
-  }
-  .dieta{
-    border-radius: 5px;
-    padding: 2px;
-    background-color: rgb(240, 137, 185);
-    color: orangered;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  }
-  .inp{
-    background-color: rgba(255, 68, 0, 0.233);
-    border: 3px solid #ff4800;
-    border-radius: 5px;
-  }
-  .inp::placeholder{
-    color: white;
-  }
-  .inp:hover{
-    color: #B0E0E6;
-    background-color: black;
-  }
-  .imagen{
-    width: 200px;
-    height: 200px;
-  }
-  .crear{
-    padding: 5px;
-    margin-top: 10px;
-  }
-  .crear:hover{
-    color: orangered;
-    background-color: white;
-  }
+  font-size: 15px;
+  color: red;
+  margin-left: 10em;
+  display: contents;
+}
+
+.form {
+  display: inline-grid;
+  border: 5px solid #ff4800;
+  border-radius: 10px;
+  padding: 10px;
+  width: 700px;
+  height: 600px;
+  justify-items: center;
+  background-image: url("../img/crearBackFood2.webp");
+  margin: 10px;
+}
+
+.conten {
+  display: inline-grid;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.conten2 {
+  display: grid;
+}
+
+.types {
+  text-align: justify;
+}
+
+.title {
+  color: white;
+  font-size: 1rem;
+  /* font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.dietas {
+  display: -webkit-inline-box;
+  margin: 5px;
+}
+
+.dieta {
+  border-radius: 5px;
+  padding: 2px;
+  background-color: rgb(240, 137, 185);
+  color: orangered;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.inp {
+  background-color: rgba(255, 68, 0, 0.233);
+  border: 3px solid #ff4800;
+  border-radius: 5px;
+}
+
+.inp::placeholder {
+  color: white;
+}
+
+.inp:hover {
+  color: #B0E0E6;
+  background-color: black;
+}
+
+.imagen {
+  width: 200px;
+  height: 200px;
+}
+
+.crear {
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.crear:hover {
+  color: orangered;
+  background-color: white;
+}

@@ -1,3 +1,4 @@
+//Componentes
 import Card from "../Card/Card";
 
 export default function Search(props) {
@@ -6,7 +7,6 @@ export default function Search(props) {
     if(isArray === false){
       receBuscada = [props.receBuscada]
     }
-    console.log(receBuscada);
     return (
         <div>
             <h2>Recetas encontradas...</h2>

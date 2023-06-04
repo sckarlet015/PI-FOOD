@@ -1,11 +1,12 @@
+//Bibliotecas
 import React from "react";
-import SearchBar from "../NavBar/SearchBar";
-import style from "./Nav.module.css"
-// import About from "../About/About";
 import { NavLink } from "react-router-dom";
+//Componentes
+import SearchBar from "../NavBar/SearchBar";
+//Estilos
+import style from "./Nav.module.css"
 
 export default function Nav(props) {
-
     return (
         <div className={style.NavBar}>
             <NavLink to={"/home"} className={style.link}>Inicio</NavLink>

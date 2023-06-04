@@ -1,19 +1,22 @@
-.DivCards{
+.DivCards {
     display: flow-root;
     justify-content: center;
 }
-h1{
+
+h1 {
     color: #0000FF;
 }
-button{
+
+button {
     background-color: rgb(255, 72, 0);
     color: white;
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
     margin-right: 8px;
-  }
-  button:hover{
+}
+
+button:hover {
     background-color: rgb(240, 64, 64);
     cursor: pointer;
-    }
+}

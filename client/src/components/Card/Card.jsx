@@ -1,8 +1,8 @@
-import { useSelector } from 'react-redux';
+//Bibliotecas
 import { NavLink } from "react-router-dom";
-import styles from "./Card.module.css";
-import { useEffect } from 'react';
 import React from 'react';
+//Estilos
+import styles from "./Card.module.css";
 
 export default function Card(props) {
   return (

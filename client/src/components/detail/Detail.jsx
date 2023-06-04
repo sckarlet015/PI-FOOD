@@ -1,21 +1,18 @@
+//Bibliotecas
 import { useEffect, useState } from "react";
-import axios from "axios";
-import style from "./Detail.module.css";
 import { useParams } from "react-router-dom";
+import axios from "axios";
+//Estilos
+import style from "./Detail.module.css";
 
 export default function Detail() {
   const [receta, setReceta] = useState([]);
-  const [promise, setPromise] = useState([]);
   const { recetaId } = useParams();
-
   useEffect(() => {
     axios(`http://localhost:3001/recipes/${recetaId}`)
-    .then(response => response.data)
-    .then(data => setReceta([data]))
-  },[recetaId]);
-
-  console.log(receta);
-
+      .then(response => response.data)
+      .then(data => setReceta([data]))
+  }, [recetaId]);
   return (
     <div className={style.card}>
       <h2>

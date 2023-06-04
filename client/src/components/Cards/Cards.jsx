@@ -1,6 +1,9 @@
-import Card from '../Card/Card';
-import style from './Cards.module.css';
+//Bibliotecas
 import { useEffect, useState } from 'react';
+//Componentes
+import Card from '../Card/Card';
+//Estilos
+import style from './Cards.module.css';
 
 export default function Cards(props) {
   const { recipes, selectedDiet } = props;
@@ -10,15 +13,13 @@ export default function Cards(props) {
   const [filteredRecipes, setFilteredRecipes] = useState(
     selectedDiet
       ? props.recipes.filter((recipe) =>
-          recipe.diets.some((diet) => diet.name === selectedDiet)
-        )
+        recipe.diets.some((diet) => diet.name === selectedDiet)
+      )
       : recipes
   );
-
   const pageSize = 9;
   const startIndex = (currentPage - 1) * pageSize;
   const endIndex = startIndex + pageSize;
-  
   useEffect(() => {
     if (recetas.length !== recipes.length) {
       setRecetas(recipes);
@@ -26,20 +27,17 @@ export default function Cards(props) {
     setFilteredRecipes(
       selectedDiet
         ? recipes.filter((recipe) =>
-            recipe.diets.some((diet) => diet === selectedDiet)
-          )
+          recipe.diets.some((diet) => diet === selectedDiet)
+        )
         : recipes
     );
   }, [recetas, recipes, selectedDiet]);
-  
   const handlePreviousPage = () => {
     setCurrentPage(currentPage - 1);
   };
-
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
   };
-
   const handleSort = (direction) => {
     const sortedRecipes = [...filteredRecipes].sort((a, b) => {
       if (direction === 'asc') {
@@ -51,18 +49,16 @@ export default function Cards(props) {
     setFilteredRecipes(sortedRecipes);
     setSortDirection(direction === 'asc' ? 'desc' : 'asc');
   };
-
   const handleOrigin = (origin) => {
-    if(origin === "TODO"){
+    if (origin === "TODO") {
       setFilteredRecipes(recipes);
     }
-    else{
+    else {
       const newRecipes = recetas.filter((receta) =>
-      receta.source === origin)
+        receta.source === origin)
       setFilteredRecipes(newRecipes);
     }
   }
-  
   return (
     <div className={style.DivCards}>
       <div>
@@ -78,7 +74,7 @@ export default function Cards(props) {
         <button onClick={() => handleOrigin("API")}>
           API
         </button>
-        <button onClick={() => handleOrigin("TODO")}> 
+        <button onClick={() => handleOrigin("TODO")}>
           TODO
         </button>
       </div>
@@ -87,7 +83,7 @@ export default function Cards(props) {
           name={ele.name}
           id={ele.id}
           image={ele.image}
-          diets={ele.diets} 
+          diets={ele.diets}
           key={ele.id}
         />
       ))}

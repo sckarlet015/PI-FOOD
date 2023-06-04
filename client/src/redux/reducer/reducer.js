@@ -25,10 +25,10 @@ const rootReducer = (state = initialState, {
                 allDiets: payload,
             };
         case POST_RECIPE:
-        return{
-            ...state,
-            allRecipes: [...state.allRecipes, payload]
-        }
+            return {
+                ...state,
+                allRecipes: [...state.allRecipes, payload]
+            }
             default:
                 return state;
     }

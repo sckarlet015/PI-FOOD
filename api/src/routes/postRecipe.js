@@ -1,13 +1,29 @@
-const { Recipe, Diet } = require('../db');
+const {
+  Recipe,
+  Diet
+} = require('../db');
 
- const postRecipe = async (req, res) => {
+const postRecipe = async (req, res) => {
   try {
-    const { name, healthScore, image, steps, summary, diets } = req.body;
+    const {
+      name,
+      healthScore,
+      image,
+      steps,
+      summary,
+      diets
+    } = req.body;
 
     // Verificar que se proporcionen todos los datos necesarios
     if (!name || !healthScore || !steps || !summary || diets.length === 0 || !image) {
       return res.status(400).json({
-        message: 'Faltan datos por completar', name, healthScore, steps, summary, diets, image
+        message: 'Faltan datos por completar',
+        name,
+        healthScore,
+        steps,
+        summary,
+        diets,
+        image
       });
     }
 
@@ -38,15 +54,15 @@ const { Recipe, Diet } = require('../db');
     //Crear un objeto con la informacion nesesaria para la respuesta del cliente
     const newRecipe = recipe.toJSON();
     let responseRecipe = {
-    name: newRecipe.name,
-    image: newRecipe.image,
-    summary: newRecipe.summary,
-    healthScore: newRecipe.healthScore,
-    steps: newRecipe.steps,
-    apiID: newRecipe.id,
-    id: newRecipe.id,
-    source: newRecipe.source,
-    diets
+      name: newRecipe.name,
+      image: newRecipe.image,
+      summary: newRecipe.summary,
+      healthScore: newRecipe.healthScore,
+      steps: newRecipe.steps,
+      apiID: newRecipe.id,
+      id: newRecipe.id,
+      source: newRecipe.source,
+      diets
     }
 
     return res.status(200).json(responseRecipe);

@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom'
 //Acciones
 import { getAllDiets } from './redux/actions/getAllDiets';
-import { getAllRecipes } from './redux/actions/getAllRecipes';
 //Componentes
 import Nav from './components/Nav/Nav';
 import Home from './components/Home/Home';
@@ -20,10 +19,7 @@ function App() {
 
   const allDiets = useSelector(state => state.allDiets);
   const isLoading = useSelector(state => state.isLoading);
-  const [diets, setDiets] = useState([]);
-
   const [receBuscada, setReceBuscada] = useState([])
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
@@ -36,19 +32,19 @@ function App() {
         let recet = await axios(`http://localhost:3001/recipes/name?name=${inputValue}`)
           .then(response => response.data)
           .then(data => data)
-          setReceBuscada(recet)
-          console.log(recet);
+        setReceBuscada(recet)
+        console.log(recet);
       }
       // Validar si es solo numeros
-      else if(/^\d+$/.test(inputValue)) {
+      else if (/^\d+$/.test(inputValue)) {
         let recet = await axios(`http://localhost:3001/recipes/${inputValue}`)
           .then(response => response.data)
           .then(data => data)
-          console.log(recet);
-          setReceBuscada(recet)
-          console.log(recet);
+        console.log(recet);
+        setReceBuscada(recet)
+        console.log(recet);
       }
-      else{
+      else {
         alert("Valor nulo, asegurate de no mezclar letras con numeros")
       }
     } catch (error) {
@@ -56,49 +52,42 @@ function App() {
     }
   }
 
-  useEffect(()=> {
-    if(allDiets.length === 0 && !isLoading){
+  useEffect(() => {
+    if (allDiets.length === 0 && !isLoading) {
       dispatch(getAllDiets());
     }
   }, [allDiets, isLoading, dispatch]);
-
-  useEffect(()=> {
-    if(!isLoading){
-      setDiets(allDiets)
-    }
-  }, [isLoading, allDiets]);
 
   function handleClick() {
     navigate("/home")
   }
   return (
     <div className="App">
-      {location.pathname !== '/' && <Nav buscar={buscar}/>}
+      {location.pathname !== '/' && <Nav buscar={buscar} />}
       <Routes>
-      <Route
+        <Route
           path='/'
-          element={<Home entrar={handleClick} />}  
+          element={<Home entrar={handleClick} />}
         />
-      <Route
-        path='/home'
-        element={<Recetas/>}
-      />
-      <Route
-      path='/search'
-      element={<Search receBuscada={receBuscada}/>}
-      />
-      <Route
+        <Route
+          path='/home'
+          element={<Recetas />}
+        />
+        <Route
+          path='/search'
+          element={<Search receBuscada={receBuscada} />}
+        />
+        <Route
           path='/detail/:recetaId'
           element={<Detail />}
         />
         <Route
           path='/crear'
-          element={<Form allDiets={allDiets}/>}
+          element={<Form allDiets={allDiets} />}
         />
       </Routes>
     </div>
   );
 }
-
 
 export default App;

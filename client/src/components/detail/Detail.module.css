@@ -16,42 +16,49 @@
   padding: 5px;
   border: 3px solid #ff4800;
 }
-  .card h2{
-    margin: 5px;
-    background-color: #ff4800;;
-    color: white;
-    border-radius: 10px;
-  }
-  .card img {
-    width: 500px;
-    height: 450px;
-    margin-top: 10px;
-    border-radius: 10px;
-    object-fit: cover;
-    align-content: center;
-    background-size: cover;
-  }
-  .resumen{
-    display: inline-flex;
-  }
-  p{
-    text-align: justify;
-  }
-  .dietas{
-    background-color: rgb(241, 226, 12);
-    color: orangered;
-    font-weight: bold;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    font-size: 16px;
-  }
-  .score{
-    background-color: rgb(241, 226, 12);
-    color: orangered;
-    font-weight: bold;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    font-size: 16px;
-  }
+
+.card h2 {
+  margin: 5px;
+  background-color: #ff4800;
+  ;
+  color: white;
+  border-radius: 10px;
+}
+
+.card img {
+  width: 500px;
+  height: 450px;
+  margin-top: 10px;
+  border-radius: 10px;
+  object-fit: cover;
+  align-content: center;
+  background-size: cover;
+}
+
+.resumen {
+  display: inline-flex;
+}
+
+p {
+  text-align: justify;
+}
+
+.dietas {
+  background-color: rgb(241, 226, 12);
+  color: orangered;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+}
+
+.score {
+  background-color: rgb(241, 226, 12);
+  color: orangered;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 5px;
+  padding: 5px;
+  font-size: 16px;
+}

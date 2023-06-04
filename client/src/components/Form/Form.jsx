@@ -1,12 +1,14 @@
-import { useEffect, useState } from "react";
+//Bibliotecas
+import { useState } from "react";
+import { useDispatch } from 'react-redux';
+//Funciones
 import { validatePoke } from "./validationsForm";
-import { useSelector, useDispatch } from 'react-redux';
+//Acciones
 import postRecipe from "../../redux/actions/postRecipe";
+//Estilos
 import style from "./Form.module.css";
-import axios from "axios";
 
 export default function Form(props) {
-
     const dispatch = useDispatch();
     const [createRece, setCreateRece] = useState({
         name: "",
@@ -28,10 +30,8 @@ export default function Form(props) {
         setCreateRece(initialState);
         setErrors({});
     };
-
     const [seleccionados, setSeleccionados] = useState(0);
     const [errors, setErrors] = useState({});
-
     const manejarCambio = (opcion) => {
         if (seleccionados === 0) {
             setCreateRece((prevCreateRece) => ({
@@ -43,7 +43,6 @@ export default function Form(props) {
             );
         }
     };
-
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setCreateRece((prevCreateRece) => ({
@@ -52,7 +51,6 @@ export default function Form(props) {
         }));
         setErrors((prevErrors) => validatePoke({ ...createRece, [name]: value }));
     };
-
     const handlePostRece = async () => {
         const hasErrors = Object.values(errors).some((error) => error !== "");
         if (hasErrors) {
@@ -60,9 +58,8 @@ export default function Form(props) {
             return;
         }
         dispatch(postRecipe(createRece))
-            resetForm();
+        resetForm();
     };
-
     return (
         <div className={style.form}>
             <h3>Crea tu Receta</h3>

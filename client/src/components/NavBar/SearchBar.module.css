@@ -1,23 +1,27 @@
-.search{
+.search {
     margin-right: 10px;
 }
-.inp{
+
+.inp {
     margin-right: 5px;
     background-color: white;
     color: orangered;
     height: 30px;
-} 
-.inp:hover{
+}
+
+.inp:hover {
     background-color: white;
     color: black;
 }
-.btn{
+
+.btn {
     background-color: rgba(0, 0, 0, 0.096);
     color: white;
     height: 30px;
     border-radius: 5px;
 }
-.btn:hover{
+
+.btn:hover {
     background-color: white;
     color: orangered;
 }

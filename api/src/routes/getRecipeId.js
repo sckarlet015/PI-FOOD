@@ -76,14 +76,14 @@ const getRecipeId = async (req, res) => {
         });
         //Crear un objeto con la informacion nesesaria para la respuesta del cliente
         let newRecipe = {
-        name: localRecipe.name,
-        image: localRecipe.image,
-        summary: localRecipe.summary,
-        healthScore: localRecipe.healthScore,
-        steps: localRecipe.steps || 'No se proporcionaron instrucciones para esta receta',
-        apiID: localRecipe.id,
-        source: localRecipe.source,
-        diets: localRecipe.diets.map(dieta => dieta.name),
+            name: localRecipe.name,
+            image: localRecipe.image,
+            summary: localRecipe.summary,
+            healthScore: localRecipe.healthScore,
+            steps: localRecipe.steps || 'No se proporcionaron instrucciones para esta receta',
+            apiID: localRecipe.id,
+            source: localRecipe.source,
+            diets: localRecipe.diets.map(dieta => dieta.name),
         }
         //Respuesta al cliente
         res.status(200).json(newRecipe)

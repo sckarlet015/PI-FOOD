@@ -1,5 +1,7 @@
 import axios from "axios";
-import { get_all_recipes } from "./actions";
+import {
+    get_all_recipes
+} from "./actions";
 
 export function getAllRecipes() {
     return dispatch => {

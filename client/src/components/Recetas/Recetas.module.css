@@ -1,8 +1,9 @@
-.conteiner{
+.conteiner {
     display: flex;
 }
-.dietas{
-    background-color: rgba(255, 255, 255, 0.24);
+
+.dietas {
+    background-color: rgba(255, 255, 255, 0.541);
     margin-top: 10px;
     margin-right: 10px;
     display: inline-block;
@@ -10,15 +11,17 @@
     border-radius: 10px;
     width: 15rem;
 }
-.recetas{
+
+.recetas {
     /* padding: 5px; */
     margin-top: 10px;
     border: solid #ff4800 3px;
     border-radius: 10px;
     width: 80rem;
-    background-image: url("../img/food.webp");
+    background-color: rgba(255, 255, 255, 0.541);
 }
-.dieta{
+
+.dieta {
     background-image: url("../img/food.webp");
     padding: 2px;
     margin-top: 10px;
@@ -31,20 +34,24 @@
     width: 10rem;
     height: 3rem;
 }
-.dieta:hover{
+
+.dieta:hover {
     background-color: black;
     color: #ff4800;
     cursor: pointer;
 }
+
 h2 {
     margin-block: auto;
 }
-.h2Dieta{
+
+.h2Dieta {
     font-size: 1.8rem;
     color: #ff4800;
 }
-.h2Receta{
+
+.h2Receta {
     font-size: 1.8rem;
     color: #ff4800;
-    background-color: rgba(255, 255, 255, 0.432);
+    /* background-color: rgba(255, 255, 255, 0.432); */
 }

@@ -1,17 +1,16 @@
-import style from './SearchBar.module.css';
+//Biblotecas
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+//Estilos
+import style from './SearchBar.module.css';
 
 export default function SearchBar(props) {
    // Estado local
    const [nameOid, setNameOid] = useState([]);
-   //Función que ejecuta la busqueda del personaje
    const handleChance = (e) => {
       const { value } = e.target;
       setNameOid(value)
-      console.log(value);
    }
-
    return (
       <div className={style.search}>
          <input

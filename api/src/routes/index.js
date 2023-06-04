@@ -1,4 +1,6 @@
-const { Router } = require('express');
+const {
+    Router
+} = require('express');
 const getRecipeId = require('./getRecipeId');
 const getDiets = require('./getDiets')
 const getRecipeByName = require('./getRecipesName');
@@ -13,7 +15,7 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.get("/recipes", getRecetasApi) 
+router.get("/recipes", getRecetasApi)
 router.get("/recipes/name", getRecipeByName)
 router.get("/recipes/:idRecipe", getRecipeId)
 router.post("/recipes", postRecipe)
