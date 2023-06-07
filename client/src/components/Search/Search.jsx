@@ -9,7 +9,7 @@ export default function Search(props) {
     }
     return (
         <div>
-            <h2>Recetas encontradas...</h2>
+            <h2>Resultados...</h2>
             {receBuscada?.length > 0 && receBuscada.map((rece) => (
                 <Card
                     name={rece.name}
@@ -19,7 +19,7 @@ export default function Search(props) {
                     key={rece.id}
                 />
             ))}
-            {receBuscada?.length === 0 && <p>Sin datos encontrados</p>}
+            {receBuscada?.length === 0 && <p>No se encontraron recetas</p>}
         </div>
     );
 }

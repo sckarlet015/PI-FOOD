@@ -1,22 +1,19 @@
 function contieneNumero(name) {
     return /\d/.test(name);
 }
-
 function contieneSimbolo(name) {
     return /[^\w\s]/.test(name);
 }
-
 function esUrl(image) {
     const regex = new RegExp(/^(ftp|http|https):\/\/[^ "]+$/);
     return regex.test(image);
 }
-
 function esNumeroEntero(num) {
     const numString = num.toString();
     const regex = /^\d+$/;
     return regex.test(numString);
 }
-export function validatePoke(createRece) {
+export function validateRece(createRece) {
     const errors = {};
     if (createRece.name.length === 0) {
         errors.name = "El nombre no puede quedar vacio"
@@ -44,6 +41,9 @@ export function validatePoke(createRece) {
     }
     if (!esNumeroEntero(createRece.healthScore)) {
         errors.healthScore = "Debe de ser un numero entero"
+    }
+    if(createRece.healthScore > 100){
+        errors.healthScore = "El nivel de salud no puede ser mayor a 100"
     }
     if (createRece.diets.length < 1) {
         errors.diets = "Debes seleccionar por lo menos una dieta"

@@ -6,6 +6,9 @@
 h1 {
     color: #0000FF;
 }
+.buttons{
+    display: flow-root;
+}
 
 button {
     background-color: rgb(255, 72, 0);

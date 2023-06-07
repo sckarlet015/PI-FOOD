@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useDispatch } from 'react-redux';
 //Funciones
-import { validatePoke } from "./validationsForm";
+import { validateRece } from "./validationsForm";
 //Acciones
 import postRecipe from "../../redux/actions/postRecipe";
 //Estilos
@@ -10,6 +10,8 @@ import style from "./Form.module.css";
 
 export default function Form(props) {
     const dispatch = useDispatch();
+    const [seleccionados, setSeleccionados] = useState(0);
+    const [errors, setErrors] = useState({});
     const [createRece, setCreateRece] = useState({
         name: "",
         image: "",
@@ -29,9 +31,14 @@ export default function Form(props) {
     const resetForm = () => {
         setCreateRece(initialState);
         setErrors({});
+        resetCheckboxes();
     };
-    const [seleccionados, setSeleccionados] = useState(0);
-    const [errors, setErrors] = useState({});
+    const resetCheckboxes = () => {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        checkboxes.forEach((checkbox) => {
+            checkbox.checked = false;
+        });
+    };
     const manejarCambio = (opcion) => {
         if (seleccionados === 0) {
             setCreateRece((prevCreateRece) => ({
@@ -39,7 +46,7 @@ export default function Form(props) {
                 diets: [...prevCreateRece.diets, opcion],
             }));
             setErrors((prevErrors) =>
-                validatePoke({ ...createRece, diets: opcion })
+                validateRece({ ...createRece, diets: opcion })
             );
         }
     };
@@ -49,7 +56,7 @@ export default function Form(props) {
             ...prevCreateRece,
             [name]: value,
         }));
-        setErrors((prevErrors) => validatePoke({ ...createRece, [name]: value }));
+        setErrors((prevErrors) => validateRece({ ...createRece, [name]: value }));
     };
     const handlePostRece = async () => {
         const hasErrors = Object.values(errors).some((error) => error !== "");
@@ -92,14 +99,14 @@ export default function Form(props) {
                     <span className={style.title}>Dietas </span>
                     <div className={style.dietas}>
                         {props.allDiets.map((opcion) => (
-                            <div key={opcion.id}> {/* Utiliza el identificador único como clave */}
+                            <div className={style.dieta} key={opcion.id}>
                                 <input
                                     type="checkbox"
                                     id={opcion.id}
                                     name={opcion.name}
                                     onChange={() => manejarCambio(opcion.name)}
                                 />
-                                <label className={style.dieta} htmlFor={opcion.name}>{opcion.name}</label>
+                                <label className={style.nameDieta} htmlFor={opcion.name}>{opcion.name}</label>
                             </div>
                         ))}
                     </div>

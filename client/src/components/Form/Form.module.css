@@ -11,7 +11,7 @@
   border-radius: 10px;
   padding: 10px;
   width: 700px;
-  height: 600px;
+  height: 650px;
   justify-items: center;
   background-image: url("../img/crearBackFood2.webp");
   margin: 10px;
@@ -39,16 +39,26 @@
 }
 
 .dietas {
-  display: -webkit-inline-box;
-  margin: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  column-gap: 20px;
+  padding: 3px;
+  margin: 3px;
+  justify-content: space-evenly;
 }
 
-.dieta {
+.nameDieta {
   border-radius: 5px;
-  padding: 2px;
+  padding: 1px;
+  margin: 1px;
   background-color: rgb(240, 137, 185);
   color: orangered;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.dieta{
+  padding: 3px;
+  margin: 3px;
 }
 
 .inp {

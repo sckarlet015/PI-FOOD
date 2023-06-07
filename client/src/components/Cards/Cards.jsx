@@ -7,6 +7,7 @@ import style from './Cards.module.css';
 
 export default function Cards(props) {
   const { recipes, selectedDiet } = props;
+  console.log(recipes);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortDirection, setSortDirection] = useState('asc');
   const [recetas, setRecetas] = useState(recipes);
@@ -24,6 +25,7 @@ export default function Cards(props) {
     if (recetas.length !== recipes.length) {
       setRecetas(recipes);
     }
+    recipes.sort()
     setFilteredRecipes(
       selectedDiet
         ? recipes.filter((recipe) =>
@@ -36,7 +38,9 @@ export default function Cards(props) {
     setCurrentPage(currentPage - 1);
   };
   const handleNextPage = () => {
-    setCurrentPage(currentPage + 1);
+    if (endIndex < filteredRecipes.length) {
+      setCurrentPage(currentPage + 1);
+    }
   };
   const handleSort = (direction) => {
     const sortedRecipes = [...filteredRecipes].sort((a, b) => {
@@ -87,11 +91,12 @@ export default function Cards(props) {
           key={ele.id}
         />
       ))}
-      <div>
+      <div className={style.buttons}>
         <button onClick={handlePreviousPage} disabled={currentPage === 1}>
           Anterior
         </button>
-        <button onClick={handleNextPage}>
+        <h4>{currentPage}</h4>
+        <button onClick={handleNextPage} disabled={endIndex >= filteredRecipes.length}>
           Siguiente
         </button>
       </div>

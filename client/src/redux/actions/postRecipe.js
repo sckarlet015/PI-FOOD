@@ -12,7 +12,7 @@ export default function postRecipe(recipe) {
                 alert(`Receta ${data.name} creada con éxito.`);
             })
             .catch(error => {
-                alert(error);
+                alert(error.response.data.message);
             })
     }
 }

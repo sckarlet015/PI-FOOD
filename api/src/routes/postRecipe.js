@@ -34,6 +34,19 @@ const postRecipe = async (req, res) => {
       });
     }
 
+    // Verificar si ya existe una receta con el mismo nombre
+    const existingRecipe = await Recipe.findOne({
+      where: {
+        name: name,
+      },
+    });
+
+    if (existingRecipe) {
+      return res.status(409).json({
+        message: 'Ya existe una receta con el mismo nombre',
+      });
+    }
+
     // Guardar la receta en la DB local
     const recipe = await Recipe.create({
       name,
